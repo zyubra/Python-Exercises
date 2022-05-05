@@ -1,0 +1,46 @@
+
+# EX 1 (no eval())
+toys = {"robot": "$40.0", "car": "$25", "ironman": "$12"}
+a = list(toys.values())
+b = []
+for item in a:
+    item = (item.replace("$", ""))
+    b.append(float(item))
+print(round(sum(b)))
+# 77
+
+
+# EX 2
+questions = [10 != 4, 50 == 50, 90 == 10, "c" in ("a", "b", "c"), 100 != 100]
+print(questions)
+# [True, True, False, True, False]
+
+
+# EX 3
+films = {"k1": "blade runner 2049", "k2": "matrix", "k3": "terminator"}
+print(len(films["k1"]) > len(films["k2"]) < len(films["k3"]))
+# True
+
+
+# EX 4
+life_stages = {0: "embryo", 1: "fetus", 2: "baby", 3: "infant", 4: "teen"}
+midlife = {5: "adult", 6: "big kid!"}
+life_stages.update(midlife)
+print(life_stages)
+# {0: 'embryo', 1: 'fetus', 2: 'baby', 3: 'infant', 4: 'teen', 5: 'adult', 6: 'big kid!'}
+
+
+# EX 5 (no eval())
+nest1 = [(1, 2, 3), {"k1": [8, 1, 300, 2, 77], "k2": [10, 20, 30]}, ["a", "500", "c"]]
+sortedk1 = sorted(nest1[1]["k1"])
+print(float(nest1[0][2] + sortedk1[-1] + nest1[1]["k2"][2] + int(nest1[2][1])))
+# 833.0
+
+# EX 6 (no eval())
+prices = ["a", "b", "9", "c", "d", "FOUR", "e", "f", "2.5"]
+sentence = """The bill for the ()#!/,?? and drink came to ()??"""
+prices = prices[2::3]
+price = "${}".format(float(prices[0]) + len(prices[1]) + float(prices[2]))
+sentence = sentence.replace("()#!/,??", "pizza, chips").replace("()??", price)
+print(sentence)
+# The bill for the pizza, chips and drink came to $15.5
