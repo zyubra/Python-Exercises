@@ -1,0 +1,122 @@
+
+# EX 1
+numbers = list(range(0, 110, 10))
+# numbers = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+first = []
+for num in numbers:
+    s = num * 2.5
+    if s % 2 == 0:
+        first.append(int(s))
+
+print(first)
+
+second = []
+x = 0
+while x < len(numbers):
+    i = numbers[x] * 2.5
+    if i % 2 == 0:
+        second.append(int(i))
+    x +=1
+
+print(second)
+
+
+# EX 2
+rep = ["Joe", "K", "Mike", "Joi", "Luv", "Deckard", "Wallace", "Rachel"]
+
+for name in rep:
+    if len(name) == 3 or name == "Rachel":
+        print(name, "is a replicant")
+    else:
+        if len(name) < 2:
+            continue
+        print(name, "NOT a replicant")
+
+
+# EX 3
+print("HUMAN")
+for r in range(2):
+    k = 0
+    while k < 8:
+        if k % 2 == 0:
+            print("Question")
+        elif 3 < k < 7:
+            print("CELL")
+        elif k == 3:
+            print("INTERLINKED")
+        else:
+            print("CELL WITHIN CELLS")
+        k += 1
+print("Time to Finish")
+
+
+# EX 4
+y = 0
+x = 0
+print("START")
+while y < 8:
+    for x in range(4, 9):
+        print("Y =", y)
+        print("_______")
+        print("X is equal to", x)
+        print("_______")
+        y += 2
+        x += 1
+print("END")
+
+
+# EX 5
+students = ["nAtalie", "M", "Fa ye", "Callum", "Tara"]
+a = []
+for name in students:
+    if len(name) > 2:
+        b = name.upper().replace(" ", "")
+        a.append(b)
+print(tuple(a))
+
+
+# EX 6
+d1 = {"k1": [20, 30, 40], "k2": [1000, 2000, 3000]}
+for a in range(3):
+    b = d1["k1"][a] + d1["k2"][a]
+    print("Total =", b)
+print("End loop")
+
+
+# EX 7
+prices = {"popcorn": 5, "soda": 2, "veggie burger": 7}
+total = []
+
+val = 0
+while val < 2:
+    num1 = input("Would you like popcorn with the film? ")
+    if num1 == "no":
+        None
+    elif num1 == "quit":
+        print("Enjoy the film")
+        break
+    else:
+        total.append(prices["popcorn"])
+
+    num2 = input("Would you like a soda? ")
+    if num2 == "no":
+        None
+    elif num2 == quit:
+        print("Enjoy the film")
+        break
+    else:
+        total.append(prices["soda"])
+
+    num3 = input("Would you like a veggie burger? ")
+    if num3 == "no":
+        None
+    elif num3 == "quit":
+        print('Enjoy the film')
+        break
+    else:
+        total.append(prices["veggie burger"])
+    val += 1
+    print("That would be $" + str(sum(total)))
+    print("Enjoy the film!")
+    break
