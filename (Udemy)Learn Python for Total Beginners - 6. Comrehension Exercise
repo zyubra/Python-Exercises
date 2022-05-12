@@ -1,0 +1,32 @@
+
+# EX 1
+simple = []
+for i in range(10):
+    s = i + 30
+    simple.append(s)
+print(simple)
+
+print([i + 30 for i in range(10)])
+
+
+# EX 2
+x = 0
+case = []
+while x < 10:
+    s = "The number is " + str(x)
+    case.append(s)
+    x += 2
+print(case)
+
+print(["The number is " + str(x) for x in range(10) if x % 2 == 0])
+
+
+# EX 3
+print([d**3 for d in range(20) if d % 2 == 0 and d > 10])
+
+
+# EX 4
+d2 = {"k1": [g + 20 * g for g in range(10) if g <5],
+      "k2": [e * e for e in range(20) if e < 10]}
+d3 = {"k3": [sum(d2["k1"]) + sum(d2["k2"])]}
+print(d2, d3)
