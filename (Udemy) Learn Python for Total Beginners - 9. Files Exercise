@@ -1,0 +1,48 @@
+
+# EX 1
+d = open("rain.txt", "w")
+d.write("Hi")
+d.write("\nfood is hot"*2)
+d.write("\nsunny day"*4)
+d.close()
+
+e = open("cloud.txt", "w")
+e.write("Hi")
+e.write("\nfood is cold"*2)
+e.write("\nsunny day"*4)
+e.close()
+
+with open("rain.txt", "r") as x, open("cloud.txt", "r") as y:
+    xlist = x.readlines()
+    ylist = y.readlines()
+    for i in range(len(xlist)):
+        print(xlist[i] == ylist[i])
+
+
+# EX 2
+files = ["morning", "evening", "night"]
+for i in files:
+    d = open("{}.txt".format(i), "w")
+    d.write("game")
+    d.close()
+    d = open("{}.txt".format(i), "a")
+    d.write("\n" + input("add text: "))
+    d.close()
+
+
+# EX 3
+w = open("count.txt", "w")
+w.write("""computer
+python
+udemy
+intelligence
+universal
+jupyter
+java
+javascript""")
+w.close()
+
+with open("count.txt", "r+") as f:
+    ftext = f.read()
+    flist = ftext.split("\n")
+print([i for i in flist if 5 <= len(i) <= 7])
