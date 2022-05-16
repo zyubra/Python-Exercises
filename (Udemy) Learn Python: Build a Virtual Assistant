@@ -1,0 +1,21 @@
+
+import wolframalpha
+import PySimpleGUI as sg
+
+# Put in your WolframAlpha AppID here ↓ otherwise the code won't work.
+client = wolframalpha.Client("******-**********")
+
+sg.theme("Default") # Check out the themes. 
+layout = [[sg.Text("What's your question?"), sg.InputText()],
+          [sg.Button('Go'), sg.Button('Quit')]]
+window = sg.Window('WolframGUI', layout)
+while True:
+    event, values = window.read()
+    if event in (None, "Quit"):
+        break
+    try:
+        res = client.query(values[0])
+        sg.Popup("Wolfram Result: " + next(res.results).text)
+    except:
+        sg.Popup("ERROR! Try again.")
+window.close()
